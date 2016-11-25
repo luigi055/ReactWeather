@@ -8,6 +8,6 @@ const Examples = props => {
 		</div>
 	);
 
-} 
+};
 
 export default Examples;
