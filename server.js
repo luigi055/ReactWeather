@@ -3,7 +3,8 @@ var express = require('express');
 // Create our app
 var app = express();
 const PORT = process.env.PORT || 3000;
-
+//redirect openweather map https traffic to http since we're using heroku
+//free service
 app.use((req, res, next) => {
   if (req.headers['x-forwarded-proto'] === 'http') {
     next();
