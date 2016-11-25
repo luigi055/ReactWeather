@@ -2,7 +2,7 @@ const express = require('express');
 
 // Create our app
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 // change https to http req.headers[] doesn't exist locally
 app.use((req, res, next) => {
   if (req.headers['x-forwarded-proto'] === 'https') {
