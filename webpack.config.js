@@ -1,5 +1,21 @@
+const webpack = require('webpack');
+
 module.exports = {
-  entry: './app/app.js',
+  entry: [
+  //will use script! style! and css! to execute our loaders and transform to bundle and script! means it will produce those frameworks without bundle them
+    'script!jquery/dist/jquery.min.js', 
+    'script!foundation-sites/dist/foundation.min.js',
+    './app/app.js'
+    ],
+  externals: {
+    jquery: 'jQuery'
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      '$': 'jquery', //assigning the $ and jQuery to jquery when bundle
+      'jQuery':'jquery'
+    })
+  ],
   output: {
     path: __dirname + '/public', // it can also be './public'
     filename: 'bundle.js'
