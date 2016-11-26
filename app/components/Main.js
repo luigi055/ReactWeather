@@ -6,8 +6,11 @@ const Main = props => {
   return (
     <div>
       <Nav />
-      <h2>Main Component!</h2>
-      {props.children /*created automatically by react Router to display the components within the Route Main*/} 
+      <div className="row">
+        <div className="medium-6 large-4 small-centered columns">
+          {props.children /*created automatically by react Router to display the components within the Route Main*/} 
+        </div>
+      </div>
     </div>
   );
 };
