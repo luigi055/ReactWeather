@@ -10,6 +10,9 @@ import Examples from './components/Examples';
 require('style!css!foundation-sites/dist/foundation.min.css');
 $(document).foundation();
 
+//App styles
+require('style!css!./styles/app.css');
+
 //weather will be the main view and will be the same path as its parent
 //so IndexRoute means that it will be render in the same path in 
 //this.props.children
