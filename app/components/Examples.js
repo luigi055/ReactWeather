@@ -8,7 +8,7 @@ const Examples = props => {
 			<p>Here are a few locations to try out</p>
 			<ol>
 				<li>
-					<Link to="/?location=san%20carlos">San Carlos</Link>
+					<Link to="/?location=san carlos">San Carlos</Link>
 				</li>
 				<li>
 					<Link to="/?location=rio">Rio, Brazil</Link>

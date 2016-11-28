@@ -18,7 +18,9 @@ class Weather extends Component {
     const self = this;
     this.setState({ 
       isLoading: true,
-      errorMessage: null
+      errorMessage: null,
+      location: null,
+      temp: null
     });
 
     openWeatherMap.getTemp(location).then(temp => {
@@ -35,6 +37,28 @@ class Weather extends Component {
     });
   }
 
+  componentDidMount() {
+    //reference to the Link component query object is where 
+    //we can get the url variable from example.js
+    const location = this.props.location.query.location; 
+
+    if (location && location.length > 0) {
+     this.handleSearch(location);
+     window.location.hash = '#/'; //reset the query
+    }
+  }
+
+  componentWillReceiveProps(newProps) {
+    //update everytime there's changes in props
+    //is used when in nav.js we're searching cities the url
+    //variables it generates will finally update the props
+    const location = newProps.location.query.location; 
+
+    if (location && location.length > 0) {
+     this.handleSearch(location);
+     window.location.hash = '#/'; //reset the query
+    }
+  }
 
   render() {
     const { isLoading, temp, location, errorMessage } = this.state;
