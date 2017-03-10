@@ -1,11 +1,5 @@
 import axios from 'axios';
 
-// const openWeatherMapAccount = {
-//   site: 'http://www.openweathermap.com',
-//   username: 'luigi055',
-//   pw: '20269510'
-// };
-
 const API = 'c5a708598d4aab87ebd961ccbd8e24b7';
 const LANG = 'en'; //pt, es, it, ru, fr, nl(dutch)
 const UNITS = 'metric';  
